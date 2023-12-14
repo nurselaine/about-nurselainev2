@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../Component/Layout/Layout";
 import { TypeAnimation } from 'react-type-animation';
+//import animation from '../../utils/motion/motion.css';
 
 const Home = () => {
   return (
     <Layout>
-      <div>Home page!</div>
       <h6>Hi my name is <span className="animated-gradient">Elaine</span></h6>
       <TypeAnimation 
         sequence={["I'm a Developer", 1000, 
