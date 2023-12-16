@@ -18,8 +18,8 @@ const Header = () => {
   const [menu, changeManu] = useState(false);
 
   return (
-    <Flex>
-      <Flex position="fixed" top="1rem" right="1rem" align="center">
+    <Flex id='navbar' w='100vw'  position="fixed" top="1rem" right="1rem"  justifyContent="flex-end">
+      <Flex>
         {/* Desktop */}
         <Flex display={["none", "none", "flex", "flex"]}>
           <Link href="/">
@@ -62,12 +62,13 @@ const Header = () => {
           </Link>
         </Flex>
 
-        <Switch
-          color="green"
-          isChecked={isDark}
-          onChange={toggleColorMode}
-          mr={2}
-        />
+          <Switch
+            color="green"
+            isChecked={isDark}
+            onChange={toggleColorMode}
+            mr={2}
+            my={7}
+          />
         {/* Mobile */}
 
         <IconButton
@@ -78,6 +79,7 @@ const Header = () => {
           onClick={() => changeDisplay("flex")}
           display={["flex", "flex", "none", "none"]}
           ml={"auto"}
+          my={3}
         />
       </Flex>
       {/* Mobile Content */}
@@ -94,7 +96,7 @@ const Header = () => {
       >
         <Flex justify="flex-end">
           <IconButton
-            mt={2}
+            mt={7}
             mr={2}
             aria-label="Open Menu"
             size="lg"
