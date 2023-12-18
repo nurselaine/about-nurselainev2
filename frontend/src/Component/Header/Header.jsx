@@ -18,7 +18,26 @@ const Header = () => {
   const [menu, changeManu] = useState(false);
 
   return (
-    <Flex id='navbar' w='100vw'  position="fixed" top="1rem" right="1rem"  justifyContent="flex-end">
+    <Flex
+      id="navbar"
+      w="100%"
+      position="fixed"
+      justifyContent="flex-end"
+      zIndex={5}
+    >
+      <Link href="/" mr='auto'>
+        <Button
+          leftIcon={<MoonIcon />}
+          as="a"
+          variant="ghost"
+          aria-label="Elaine Huynh"
+          my={5}
+          w="100%"
+          color={isDark ? "gray.50" : "gray.800"}
+        >
+          | Elaine Huynh
+        </Button>
+      </Link>
       <Flex>
         {/* Desktop */}
         <Flex display={["none", "none", "flex", "flex"]}>
@@ -62,20 +81,20 @@ const Header = () => {
           </Link>
         </Flex>
 
-          <Switch
-            color="green"
-            isChecked={isDark}
-            onChange={toggleColorMode}
-            mr={2}
-            my={7}
-          />
+        <Switch
+          color="green"
+          isChecked={isDark}
+          onChange={toggleColorMode}
+          mr={2}
+          my={7}
+        />
         {/* Mobile */}
 
         <IconButton
           aria-label="Open Menu"
           size="lg"
           icon={display === "flex" ? "" : <HamburgerIcon />}
-          bg={display === "flex" && 'none'}
+          bg={display === "flex" && "none"}
           onClick={() => changeDisplay("flex")}
           display={["flex", "flex", "none", "none"]}
           ml={"auto"}
@@ -105,7 +124,7 @@ const Header = () => {
           />
         </Flex>
 
-        <Flex flexDir="column" align="center">
+        <Flex flexDir="column" align="center" bgColor={isDark ? 'gray.800' : 'gray.50'} h='100vh' w='100vw'>
           <Link href="/">
             <Button
               as="a"
