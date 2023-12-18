@@ -2,54 +2,88 @@ import React from "react";
 import Layout from "../../Component/Layout/Layout";
 import { TypeAnimation } from "react-type-animation";
 import Spline from "@splinetool/react-spline";
-import { Box, Center, Flex, Spacer, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Circle,
+  Divider,
+  Flex,
+  Spacer,
+  Stack,
+  HStack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 //import animation from '../../utils/motion/motion.css';
+import style from "./Home.scss";
 
 const Home = () => {
   return (
-    <Layout>
-      <Stack 
-        direction={["column-reverse", "row"]} 
-        spacing={5} 
-        h="100vh" 
-        w="100vw" 
-        px={[4, 16, 24]} 
+    <Box 
+      id="home"
+      h="100vh"
+      w="100vw"
+      px={[8, 16, 24]}
+    >
+      <Stack
+        direction="row"
+        spacing={5}
+        h='100%'
+        w='100%'
+        flexDirection='column'
       >
-        <Flex direction="column" h="100%" w='50%'>
-          <Center w="50%" h={["50%", "50%", "100%"]}>
-            <Box w='100%'>
-              <Text>
-                Hi my name is <span className="animated-gradient">Elaine</span>
-              </Text>
-              <TypeAnimation
-                sequence={[
-                  "I'm a Developer",
-                  1000,
-                  "I'm a Nurse",
-                  1000,
-                  "I'm a Graduate Student at Seattle U",
-                  1000,
-                  "I'm a Dog mom",
-                  1000,
-                  "I'm a Lifelong learner",
-                  1000,
-                  "I'm a software engineer",
-                  1000,
-                ]}
-                speed={50}
-                repeat={Infinity}
-                style={{ fontsize: "2em" }}
-              />
+        <Center w={["100%", "100%"]} h='auto' pt='3rem' justifyContent='flex-start'>
+          <HStack>
+            <Box>
+              <LineWithDot />
             </Box>
-          </Center>
-        </Flex>
-        <Center h={['100%']} w={['100%', '50%']}>
-          <Box h='100%' w='100%'>
-            <Spline scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+            <Box>
+              <VStack alignItems="start" spacing={2}>
+                <Text fontSize={["lg", "2xl", "5xl"]} as="b" numOfLines={1}>
+                  👋🏻 Hi my name is{" "}
+                  <span className="animated-gradient">Elaine</span>
+                </Text>
+                <Text fontSize={["xs", "md", "xl"]} as="b">
+                  I am a
+                  <TypeAnimation
+                    sequence={[
+                      " Developer",
+                      1000,
+                      " Nurse",
+                      1000,
+                      " Graduate Student",
+                      1000,
+                      " Dog mom",
+                      1000,
+                      " lifelong learner",
+                      1000,
+                      " software engineer",
+                      1000,
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                    style={{ color: "hotpink" }}
+                  />
+                </Text>
+              </VStack>
+            </Box>
+          </HStack>
+        </Center>
+        <Center h={["60%", "60%"]} w={"100%"}>
+          <Box h="100%" w="100%">
+            <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
           </Box>
         </Center>
       </Stack>
-    </Layout>
+    </Box>
+  );
+};
+
+const LineWithDot = () => {
+  return (
+    <div className="line">
+      <div className="dot"></div>
+    </div>
   );
 };
 

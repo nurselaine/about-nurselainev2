@@ -1,0 +1,45 @@
+#home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url("../../../public/assets/img/hero_bg.jpg");
+  background-repeat: none;
+  background-position: center;
+  background-size: cover; 
+  padding-top: 6rem;
+}
+
+.line{
+  position: relative;
+  width: 3px;
+  height: 125px;
+  background-color: white;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, white, transparent);
+
+  .dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+  }
+}
+
+.orbs{
+  @media (min-width: 30em) {
+    transform: scale(0.5);
+  }
+  @media (max-width: 62em) {
+    transform: scale(0.75);
+  }
+  @media (min-width: 62em) {
+    transform: scale(1);
+  }
+  @media (min-width: 80em) {
+    transform: scale(1.25);
+  }
+}
