@@ -1,49 +1,42 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Spline from "@splinetool/react-spline";
-import {
-  Box,
-  Center,
-  Stack,
-  HStack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { Box, Center,Flex, Stack, HStack, Text, VStack } from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 //import animation from '../../utils/motion/motion.css';
 import style from "./Home.scss";
 
 const Home = () => {
   return (
-    <Box 
-      id="home"
-      h="100vh"
-      w="100vw"
-      px={[8, 16, 24]}
-    >
+    <Box id="home" h="100vh" w="100vw" px={[8, 16, 24]}>
       <Stack
-        direction="row"
         spacing={5}
-        h='80%'
-        w='100%'
-        flexDirection='column'
+        h="80%"
+        w="100%"
+        flexDir="column"
       >
-        <Center 
-          w={["100%", "100%"]} 
-          h='auto' 
-          pt='3rem' 
-          justifyContent='flex-start'
+        <Center
+          w={["100%", "100%"]}
+          h="auto"
+          pt="3rem"
+          justifyContent="flex-start"
         >
-          <HStack>
+          <HStack pl="3rem">
             <Box>
               <LineWithDot />
             </Box>
             <Box>
               <VStack alignItems="start" spacing={2}>
-                <Text fontSize={["3xl", "4xl", "5xl"]} as="b" numOfLines={1}>
+                <Text
+                  fontSize={["3xl", "4xl", "5xl", "6xl"]}
+                  as="b"
+                  numOfLines={1}
+                >
                   👋🏻 Hi my name is{" "}
                   <span className="animated-gradient">Elaine</span>
                 </Text>
-                <Text fontSize={["sm", "md", "xl"]} as="b">
+                <Text fontSize={["sm", "lg", "2xl"]} as="b">
                   I am a
                   <TypeAnimation
                     sequence={[
@@ -69,11 +62,62 @@ const Home = () => {
             </Box>
           </HStack>
         </Center>
-        <Box h={['45vh', '50vh']} w='100vw'>
-          <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+        <Box h={["45vh", "50vh"]} w="100vw">
+          <Spline
+            className="orbs"
+            scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode"
+          />
         </Box>
+
       </Stack>
+      <Box position="absolute" bottom="1rem" left="50%">
+
+        <DownArrow />
+      </Box>
     </Box>
+  );
+};
+
+const DownArrow = () => {
+  return (
+    <Flex flexDir="column" gap="none">
+      <motion.button 
+        className="downarrow" 
+        animate={{ scale: 1.3 }}
+        transition={{ 
+          type: "spring",
+          damping: 3,
+          repeat: 'infinite',
+          delay: 0
+        }}
+      >
+        <ChevronDownIcon boxSize={10} />
+      </motion.button>
+      <motion.button 
+        className="downarrow" 
+        animate={{ scale: 1.2 }}
+        transition={{ 
+          type: "spring",
+          damping: 3,
+          repeat: 'infinite',
+          delay: 0.2
+        }}
+      >
+        <ChevronDownIcon boxSize={10} opacity={0.75} />
+      </motion.button>
+      <motion.button 
+        className="downarrow" 
+        animate={{ scale: 1 }}
+        transition={{ 
+          type: "spring",
+          damping: 3,
+          repeat: 'infinite',
+          delay: 0.3
+        }}
+      >
+        <ChevronDownIcon boxSize={10} opacity={0.5} />
+      </motion.button>
+    </Flex>
   );
 };
 
