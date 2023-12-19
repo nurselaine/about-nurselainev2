@@ -1,10 +1,10 @@
 import { useState, React } from "react";
 import {
   Flex,
-  Link,
   Button,
   IconButton,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { HamburgerIcon, CloseIcon, MoonIcon } from "@chakra-ui/icons";
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
       zIndex={5}
       px={5}
     >
-      <Link href="/" mr='auto'>
+      <Link to={'/'}>
         <Button
           leftIcon={<MoonIcon />}
           as="a"
@@ -27,6 +27,7 @@ const Header = () => {
           aria-label="Elaine Huynh"
           my={5}
           w="100%"
+          mr='auto'
         >
           |  Elaine Huynh
         </Button>
@@ -34,7 +35,7 @@ const Header = () => {
       <Flex>
         {/* Desktop */}
         <Flex display={["none", "none", "flex", "flex"]}>
-          <Link href="/">
+          <Link to={'/'}>
             <Button
               as="a"
               variant="ghost"
@@ -47,7 +48,7 @@ const Header = () => {
             </Button>
           </Link>
 
-          <Link href="/about">
+          <Link to={'/timeline'}>
             <Button
               as="a"
               variant="ghost"
@@ -59,7 +60,7 @@ const Header = () => {
             </Button>
           </Link>
 
-          <Link href="/contact">
+          <Link to={"/contact"}>
             <Button
               as="a"
               variant="ghost"
