@@ -1,14 +1,9 @@
 import React from "react";
-import Layout from "../../Component/Layout/Layout";
 import { TypeAnimation } from "react-type-animation";
 import Spline from "@splinetool/react-spline";
 import {
   Box,
   Center,
-  Circle,
-  Divider,
-  Flex,
-  Spacer,
   Stack,
   HStack,
   Text,
@@ -28,22 +23,27 @@ const Home = () => {
       <Stack
         direction="row"
         spacing={5}
-        h='100%'
+        h='80%'
         w='100%'
         flexDirection='column'
       >
-        <Center w={["100%", "100%"]} h='auto' pt='3rem' justifyContent='flex-start'>
+        <Center 
+          w={["100%", "100%"]} 
+          h='auto' 
+          pt='3rem' 
+          justifyContent='flex-start'
+        >
           <HStack>
             <Box>
               <LineWithDot />
             </Box>
             <Box>
               <VStack alignItems="start" spacing={2}>
-                <Text fontSize={["lg", "2xl", "5xl"]} as="b" numOfLines={1}>
+                <Text fontSize={["3xl", "4xl", "5xl"]} as="b" numOfLines={1}>
                   👋🏻 Hi my name is{" "}
                   <span className="animated-gradient">Elaine</span>
                 </Text>
-                <Text fontSize={["xs", "md", "xl"]} as="b">
+                <Text fontSize={["sm", "md", "xl"]} as="b">
                   I am a
                   <TypeAnimation
                     sequence={[
@@ -69,11 +69,9 @@ const Home = () => {
             </Box>
           </HStack>
         </Center>
-        <Center h={["60%", "60%"]} w={"100%"}>
-          <Box h="100%" w="100%">
-            <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
-          </Box>
-        </Center>
+        <Box h={['45vh', '50vh']} w='100vw'>
+          <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+        </Box>
       </Stack>
     </Box>
   );

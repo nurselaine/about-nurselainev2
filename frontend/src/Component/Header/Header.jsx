@@ -1,21 +1,14 @@
 import { useState, React } from "react";
 import {
-  useColorMode,
-  Switch,
-  Box,
   Flex,
   Link,
   Button,
-  Text,
   IconButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon } from "@chakra-ui/icons";
 
 const Header = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const isDark = colorMode === "dark";
   const [display, changeDisplay] = useState("none");
-  const [menu, changeManu] = useState(false);
 
   return (
     <Flex
@@ -24,6 +17,7 @@ const Header = () => {
       position="fixed"
       justifyContent="flex-end"
       zIndex={5}
+      px={5}
     >
       <Link href="/" mr='auto'>
         <Button
@@ -33,9 +27,8 @@ const Header = () => {
           aria-label="Elaine Huynh"
           my={5}
           w="100%"
-          color={isDark ? "gray.50" : "gray.800"}
         >
-          | Elaine Huynh
+          |  Elaine Huynh
         </Button>
       </Link>
       <Flex>
@@ -48,7 +41,7 @@ const Header = () => {
               aria-label="Home"
               my={5}
               w="100%"
-              color={isDark ? "gray.50" : "gray.800"}
+              
             >
               Home
             </Button>
@@ -61,7 +54,6 @@ const Header = () => {
               aria-label="About"
               my={5}
               w="100%"
-              color={isDark ? "gray.50" : "gray.800"}
             >
               About
             </Button>
@@ -74,20 +66,19 @@ const Header = () => {
               aria-label="Contact"
               my={5}
               w="100%"
-              color={isDark ? "gray.50" : "gray.800"}
             >
               Contact
             </Button>
           </Link>
         </Flex>
 
-        <Switch
+        {/* <Switch
           color="green"
           isChecked={isDark}
           onChange={toggleColorMode}
           mr={2}
           my={7}
-        />
+        /> */}
         {/* Mobile */}
 
         <IconButton
@@ -124,7 +115,7 @@ const Header = () => {
           />
         </Flex>
 
-        <Flex flexDir="column" align="center" bgColor={isDark ? 'gray.800' : 'gray.50'} h='100vh' w='100vw'>
+        <Flex flexDir="column" align="center" h='100vh' w='100vw'>
           <Link href="/">
             <Button
               as="a"
@@ -132,7 +123,6 @@ const Header = () => {
               aria-label="Home"
               my={5}
               w="100%"
-              color={isDark ? "gray.50" : "gray.800"}
             >
               Home
             </Button>
@@ -145,7 +135,6 @@ const Header = () => {
               aria-label="About"
               my={5}
               w="100%"
-              color={isDark ? "gray.50" : "gray.800"}
             >
               About
             </Button>
@@ -158,7 +147,6 @@ const Header = () => {
               aria-label="Contact"
               my={5}
               w="100%"
-              color={isDark ? "gray.50" : "gray.800"}
             >
               Contact
             </Button>
