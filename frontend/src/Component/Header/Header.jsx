@@ -19,7 +19,7 @@ const Header = () => {
       zIndex={5}
       px={5}
     >
-      <Link to={'/'}>
+      <Link to={'/'} style={{ marginRight: "auto" }}>
         <Button
           leftIcon={<MoonIcon />}
           as="a"

@@ -8,7 +8,7 @@ import {
 import Home from "./Page/Home/Home";
 import ErrorPage from "./Page/ErrorPage";
 import Timeline from "./Page/Timeline/Timeline";
-import Layout from "./Component/Layout/Layout";
+import { AnimatePresence } from "framer-motion";
 
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -29,7 +29,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <RouterProvider router={router} />
+      <AnimatePresence>
+        <RouterProvider router={router} />
+      </AnimatePresence>
     </ChakraProvider>
   </React.StrictMode>
 );

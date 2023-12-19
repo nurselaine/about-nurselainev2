@@ -13,12 +13,13 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
-import style from "./Home.scss";
+import "./Home.scss";
 import Layout from "../../Component/Layout/Layout";
 
 const Home = () => {
   return (
     <Layout>
+      <motion.div exit={{ opacity:0 }}>
       <Box id="home" h="100vh" w="100vw" px={[8, 16, 24]}>
         <Stack spacing={5} h="80%" w="100%" flexDir="column">
           <Center
@@ -37,11 +38,12 @@ const Home = () => {
                     fontSize={["3xl", "4xl", "5xl", "6xl"]}
                     as="b"
                     numOfLines={1}
+                    color="gray.200"
                   >
                     👋🏻 Hi my name is{" "}
                     <span className="animated-gradient">Elaine</span>
                   </Text>
-                  <Text fontSize={["sm", "lg", "2xl"]} as="b">
+                  <Text fontSize={["sm", "lg", "2xl"]} as="b" color="gray.200">
                     I am a
                     <TypeAnimation
                       sequence={[
@@ -80,6 +82,7 @@ const Home = () => {
           </Link>
         </Box>
       </Box>
+      </motion.div>
     </Layout>
   );
 };

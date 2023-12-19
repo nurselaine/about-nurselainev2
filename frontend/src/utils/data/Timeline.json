@@ -1,42 +1,31 @@
 {
   "items": [
     {
-      "title": "Septempber 2023 | Fall Quarter",
+      "title": "Septempber 2023 - Decemeber 2023",
       "cardTitle": "Seattle University Teaching Assistant",
       "url": "",
       "cardSubtitle": "CPSC 5005: Graduate Data Structure course taught in C++.",
       "cardDetailedText": "As a teaching assistant, I assisted in teaching and one-on-one student tutoring for 40+ students. Topics covered in class and assignments include binary search trees, priority queues, hash tables, and heaps. Recursion, sorting, and run-time analysis using big-O notation."
     }, {
-      "title": "Summer 2023 | Internship",
+      "title": "June 2023 - September 2023",
       "cardTitle": "Software Engineer Internship @ Staples",
       "url": "https://www.staples.com/",
       "cardSubtitle": "Summer software engineering internship with Staples",
       "cardDetailedText": "Boosting chat support feature activity by seamlessly integrating a customer support chat feature into Staples product pages. Collaborated with cross-functional engineering, design, and product management teams to understand and meet feature goals. Leveraged technologies such as Next.js, React.js, React-Redux, Jenkins CI/CD deployement to develop, design, and deploy features to staging and production pipelines. Worked closely with teammates on an agile team and took part in daily morning standup. Bolstered team onboarding process by updating environment set-up documentation, guidelines, and deployment documentation pertinent to team responsibilities."
     }, {
-      "title": "January 2023 | Winter Quarter",
-      "cardTitle": "Seattle University Master's of Computer Science & Certificate of Computer Science Fundamentals Bridge Program",
+      "title": "January 2023 - Present",
+      "cardTitle": "Seattle University Master's of Computer Science",
       "url": "",
-      "cardSubtitle": "Beginning of my academic journey to earning a Master's of Science in Computer Science!",
+      "cardSubtitle": "Beginning of my academic journey to earning a M.S. in Computer Science & Certificate of Computer Science Fundamentals!",
       "cardDetailedText": "I decided to continue my education after learning how to build full-stack applicaations. Gaining a deeper understanding of my fundamentals in computer science was important for me to feel more confident as an engineer. Starting this program allowed me to explore various technical skills that I had yet to discover as well as create a community of support and network with others that share the same passions and interests as me!"
     }, {
-      "title": "January 2023 | Software Engineer Role - Quality Assurance & Front-end",
-      "cardTitle": "",
+      "title": "May 2022 - November 2022",
+      "cardTitle": "Code Fellows Full Stack Advanced JavaScript Certification",
       "url": "",
-      "cardSubtitle": "",
-      "cardDetailedText": ""
-    }, {
-      "title": "February 2023 | Software Engineer Role - Front-end",
-      "cardTitle": "",
-      "url": "",
-      "cardSubtitle": "",
-      "cardDetailedText": ""
-    }, {
-      "title": "",
-      "cardTitle": "",
-      "url": "",
-      "cardSubtitle": "",
+      "cardSubtitle": "Gradated from an intensive Full-Stack Web Development Bootcamp focusing on JavaScript",
       "cardDetailedText": ""
     }
   ],
-  "overview": "Hi there! My name is Elaine, I'm based in Seattle, Washington 🌲. A few months ago, I graduated from Code Fellows, a Full-Stack Web Developmet bootcamp where I learned how to build robust user applications using MERN (MongoDB, Express.js, React.js, & Node.js). My interests in software engineering have only grown since finishing my bootcamp which led me to pursue a Master's of Computer Science Degree at Seattle University 🦅. As I continue to solidify my fundamentals in computer science, I am finding new interests through learning more about distributed systems, machine learning and interactive designs to create unique user-experiences! I love building personal projects and seeking new challenges. Let's work together and make your ideas become a reality! 🪐"
+  "overview": "Hi there! My name is Elaine, I'm based in Seattle, Washington 🌲. A few months ago, I graduated from Code Fellows, a Full-Stack Web Developmet bootcamp where I learned how to build robust user applications using MERN (MongoDB, Express.js, React.js, & Node.js) stack. My interests in software engineering have only grown since finishing my bootcamp which led me to pursue a Master's of Computer Science Degree at Seattle University 🦅. As I continue to solidify my fundamentals in computer science, I am finding new interests through learning more about distributed systems, machine learning and interactive designs to create unique user-experiences! I love building personal projects and seeking new challenges. Let's work together and make your ideas become a reality! 🪐",
+  "projects": "These projects showcase my skills & experience through examples of my own passion projects and side projects I have build for others around me! I have included some creative projects that I've collaborated on with other students and aspiring software engineers. These projects reflect my learning progress since starting my journey to becoming a proffesional software engineer! If you would like to learn more about how I created these or have some feedback, feel free to reach out or checkout my github!"
 }
