@@ -1,11 +1,12 @@
 import React from "react";
 import { Chrono } from "react-chrono";
-import { motion } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import items from "../../utils/data/Timeline.json";
 import Layout from "../../Component/Layout/Layout";
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
-import Spline from "@splinetool/react-spline";
-import "./Timeline.scss";
+import { slidein } from "../../utils/motion/motion";
+import PageDescription from "../../Component/PageDescription";
+import Projects from "../Projects";
 
 const Timeline = () => {
   return (
@@ -16,26 +17,71 @@ const Timeline = () => {
           h="100px"
           bgGradient="linear-gradient(360deg, #050816 20%, #000000 67%);"
         />
-        <Box 
-          id="timeline" 
-          h="100%" 
-          w="100%" 
+        <Box
+          id="timeline"
+          h="100%"
+          w="100%"
           px={[8, 16, 24]}
           bg="#050816"
+          position="relative"
+          overflow="hidden"
         >
-          <Flex flexDir="column" gap={3}>
-            <Text opacity={0.5} fontSize={["md", "lg"]} color="gray.200">
-              Introduction
-            </Text>
-            <Heading as="b" fontSize={["2xl", "4xl"]}>
-              Overview
-            </Heading>
-            <Text w={["80%", "60%"]} fontSize={["md", "lg"]} color="gray.400">
-              {items.overview}
-            </Text>
-          </Flex>
+          <Box position="absolute" top="200px" right="100px" opacity={0.5}>
+            <motion.div
+              initial={{ opacity: 0.5 }}
+              animate={{ scale: 1.1 }}
+              transition={{
+                type: "spring",
+                damping: 3,
+                repeat: "infinite",
+                delay: 0,
+              }}
+            >
+              <Blob w="200px" h="200px" r="100px" t="20px" bg="purple.200" />
+            </motion.div>
+          </Box>
+          <PageDescription 
+            title="Introduction"
+            heading="Overview"
+            overview={items.overview}
+          />
           <Center w="100%" pt="10rem">
-            <Box h="100%" w="100%">
+            <Box position="absolute" top="600px" left="-125px" opacity={0.5}>
+              <motion.div
+                initial={{ opacity: 0.9 }}
+                animate={{ scale: 1.3 }}
+                transition={{
+                  type: "spring",
+                  damping: 3,
+                  repeat: "infinite",
+                  delay: 0,
+                }}
+              >
+                <Blob w="250px" h="250px" bg="pink.200" blur="100px" />
+              </motion.div>
+            </Box>
+            <Box h="100%" w="100%" position="relative">
+              <Box position="absolute" top="400px" right="-150px">
+                <motion.div
+                  initial={{ opacity: 0.5 }}
+                  animate={{ scale: 1.1 }}
+                  transition={{
+                    type: "spring",
+                    damping: 3,
+                    repeat: "infinite",
+                    delay: 0,
+                  }}
+                >
+                  <Blob
+                    w="300px"
+                    h="300px"
+                    r="100px"
+                    t="100px"
+                    bg="gray.50"
+                    blur="150px"
+                  />
+                </motion.div>
+              </Box>
               <Chrono
                 items={items.items}
                 mode="VERTICAL_ALTERNATING"
@@ -50,26 +96,42 @@ const Timeline = () => {
                   titleColorActive: "#D53F8C", // pink 500
                 }}
                 fontSizes={{
-                  cardText: '1.5rem',
-                  cardTitle: '1.75rem',
+                  cardText: "1.5rem",
+                  cardTitle: "1.75rem",
                 }}
                 slideShow
                 slideItemDuration={4500}
                 scrollable={{}}
               />
+              <Box position="absolute" bottom="200px" left="-200px">
+                <motion.div
+                  initial={{ opacity: 0.5 }}
+                  animate={{ scale: 1.1 }}
+                  transition={{
+                    type: "spring",
+                    damping: 3,
+                    repeat: "infinite",
+                    delay: 0,
+                  }}
+                >
+                  <Blob
+                    w="250px"
+                    h="250px"
+                    r="100px"
+                    t="100px"
+                    bg="blue.400"
+                    blur="100px"
+                  />
+                </motion.div>
+              </Box>
             </Box>
           </Center>
-          {/* <Box
-            position="absolute"
-            bottom={0}
-            w='100%'
-
-            bgGradient="linear-gradient(360deg, #19082c 24%, #040108 67%)"
-            zIndex={-1}
-          >
-            <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
-          </Box> */}
         </Box>
+        <Box
+          w="100%"
+          h="100px"
+          bgGradient="linear-gradient(360deg, #000000 24%, #050816 67%);"
+        />
       </motion.div>
       <motion.div>
         <Projects />
@@ -78,20 +140,27 @@ const Timeline = () => {
   );
 };
 
-const Projects = () => {
+const Blob = ({ w, h, bg, r, l, t, b, blur, ...props }) => {
+  let defaultParam = {
+    w: w || "100px",
+    h: h || "100px",
+    bg: bg || "white",
+    r: r || "0",
+    t: t || "0",
+    b: b || "0",
+    l: l || "0",
+  };
+
   return (
-    <Box>
-      <Text>
-        MY WORK
-      </Text>
-      <Heading>
-        Projects.
-      </Heading>
-      <Text>
-        {items.projects}
-      </Text>
-    </Box>
-  )
-}
+    <Box
+      borderRadius="50%"
+      className="blob"
+      filter={`blur(${blur || "90px"})`}
+      w={w}
+      h={h}
+      bg={bg}
+    />
+  );
+};
 
 export default Timeline;

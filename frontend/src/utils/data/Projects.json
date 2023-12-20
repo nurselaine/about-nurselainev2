@@ -1,0 +1,86 @@
+{
+  
+  "about_projects": "These projects showcase my skills & experience through examples of my own passion projects and side projects I have build for others around me! I have included some creative projects that I've collaborated on with other students and aspiring software engineers. These projects reflect my learning progress since starting my journey to becoming a proffesional software engineer! If you would like to learn more about how I created these or have some feedback, feel free to reach out or checkout my github!",
+  "projects": [
+    {
+      "project_name": "WenJobs",
+      "project_desc": "Targeted Job Search tool",
+      "project_src": "./assets/img/wenjobs/job-search.png",
+      "images": ["./assets/img/wenjobs/wenjob-1.png", "./assets/img/wenjobs/wenjob-2.png", "./assets/img/wenjobs/wenjob-3.png"],
+      "tech": ["JavaScript", "React", "Ant UI", "React Router Dom", "Auth0", "Google Real-time Database","Sass", "HTML", "Express", "Node", "Puppeteer", "Node-cron", "Jest", "Render", "Firebase Hosting"],
+      "info": "The concept of WenJobs was a team project I completed during my time at Code Fellows. We worked with Web3 Job Recruiter who played the role of our client. Using the concepts learned over the past six months, my team and I developed a Web3 job board that connects to users' LinkedIn connections. The concept of this project was to create a targeted job search tool that utilizes a user’s network. My focus developing this project was utilizing web scraping technologies to provide users the newest job opportunities from the most popular Web3 job boards! Having the opportunity to work with a client on this project was a rewarding experience. I was able to build out my client's vision and gain a higher level of client-developer communication.",
+      "features": ["Responsive components using Ant UI", "Simple design and navigation using React Router", "Authentication & Authorization step using Auth0", "Database management to store user information & connections", "Express API server updating job board every 12 hours with new job listings", "Filtering functionalities", "Connections page for users to upload LinkedIn connections CSV"],
+      "stretch": ["Utilize PostgreSQL database to manage company data with user connections", "Utilize AngelList & Crunchbase APIs to display data on the companies within the database", "Request for LinkedIn Full-Profile access permissions to include a user's first, second, and third degree connections within the targeted job search"],
+      "github": "https://github.com/Wen-Jobs",
+      "site": "https://wenjobs.xyz/",
+      "active": true
+    },
+    {
+      "project_name": "Hair By Loann",
+      "project_desc": "Cosmetologist Business Website",
+      "project_src": "./assets/img/hairByLoann/hair-salon.png",
+      "images": ["./assets/img/hairByLoann/hairbyloann-1.png", "./assets/img/hairByLoann/hairbyloann-2.png", "./assets/img/hairByLoann/hairbyloann-3.png"],
+      "tech": ["JavaScript", "React", "HTML", "CSS", "Express", "Google Firestore", "Bootstrap", "Google API", "Twilio", "Heroku"],
+      "info": "After meeting Loann who is a cosmetologist, I was motivated to create an online website to help promote her small business. I created a portfolio website for Loann to connect with current and prospective clients online. I utilized media queries to ensure the website would be responsive to improve user experiences on mobile devices. An important user story Loann mentioned was that she only wanted to communicate with clients via SMS. Twilio was used to send Loann appointment requests via a twilio phone number. I am planning to include pictures and reviews to display in her portfolio. Lastly, I decided on using Google's Firestore Database so I can connect to Google's Business API to display Loann’s most recent google reviews and photos.",
+      "challenges": "Creating my own responsive components was a challenge that took more time and research while developing this project. I wanted to better understand how the UI components from libraries I have used in the past work, so I decided on creating my own responsive components. I started with the navigation bar that would transition to a hamburger menu at a certain breakpoint and then I utilized Flex-box and grid to ensure the columns within the application would seamlessly adjust on various viewports. I learned a great deal about the importance of responsiveness and accessibility while creating this project because I felt a deeper sense of responsibility to Loann to make sure her clients & prospective clients could easily use this website while maintaining a good user experience.",
+      "features": ["Responsive design & components", "Contact form to send SMS using Twilio API", "Form for users to leave reviews", "Gallery to display photos from Google Business API", "Accordian to display services, costs, and duration", "Basic business information (address, open/close times, contact information)"],
+      "stretch": ["Set up AWS S3 bucket for Client to add images to website database", "Create an separate interface for client to approve incoming reviews & images to display"],
+      "github": "https://github.com/nurselaine/salon-front-end",
+      "site": "https://hair-by-loann.netlify.app",
+      "active": true
+    },
+    {
+      "project_name": "KanBrain",
+      "project_desc": "Productivity Tool for Project Planning",
+      "project_src": "./assets/img/kanbrain/trello-icon.png",
+      "images": ["./assets/img/kanbrain/trello-board.png", "./assets/img/kanbrain/trello-board-2.png", "./assets/img/kanbrain/trello-board-3.png"],
+      "tech": ["JavaScript", "React", "HTML", "CSS", "Google Firestore", "React Router", "Bootstrap", "Express", "Restful API", "Render"],
+      "challenges": "I wanted to re-create Trello using the concepts I had learned in my intro to web development course. While planning and creating data models, I found the limitations of using a non-relational database. After researching and understanding the pros and cons to using both relational databases and NoSQL databases, I knew that I would still be able to use a NoSQL database; however, I would not be able to make complex transactions that a relational database would allow. I wanted to solidify my understanding and usage of non-relational databases and implemented Google Firestore's non-relational database. Unlike Trello, Kanbrain utilizes an edit and save button. Moving forward, I plan on implementing a postgreSQL relational database on top of the current database, so I can transition my data into tables that I can make joins and more complex transactions between!",
+      "info": "Planning has always been an essential skill that I deeply value and aim to perfect. I built this Trello inspired application for users to plan out robust projects with their teammates without the expensive payment plans! On the backend I utilized a REST API, CRUD operations, and Google's Firestore non-relational database to store project boards and task cards.",
+      "features": ["Drag & Drop capabilities using React-Drag-n-Drop library", "Database management for board & task persistence", "RESTful API built with Node and Express", "Users can create/read/edit/delete tasks", "Save & Edit buttons to update tasks within database"],
+      "stretch": ["Implement Browser Router to create a new Kanban board", "Implement PostgreSQL database on the backend and re-route tasks, columns, and project data accordingly", "Incorporate Socket.io library to allow multiple teammates to view/edit a shared project", "Add Basic Authentication using Base-64 and Bcrypt and implement Bearer Authentication to validate returning users", "Add a page to access all previously create Kanban boards"],
+      "github": "https://github.com/nurselaine/my-kanban-front-end/tree/main/my-kanban-front-end",
+      "site": "https://nurselaine-brain.netlify.app",
+      "active": false
+    },
+    {
+      "project_name": "Calendme",
+      "project_desc": "Events Scheduler to Share With Friends",
+      "project_src": "./assets/img/Calendme/calendar.png",
+      "tech": ["JavaScript", "React", "HTML", "CSS", "Auth0", "Express", "RESTful API", "Axios", "MongoDB"],
+      "images": ["./assets/img/Calendme/calendar-1.png", "./assets/img/Calendme/calendar-2.png", "./assets/img/Calendme/calendar-3.png"],
+      "info": "The calendar is one of my favorite applications to use and keep track of my upcoming plans. The functionality of Calendme was based on Google's Calendar application. Features of this application were built using a RESTful API, CRUD operations, MongoDB, and mongoose ORM.",
+      "features": ["Responsive design & components created using MUI", "Holiday API & date libraries used for data collection", "Database management implemented using MongoDB", "Authentication & Authorization implemented using Auth0", "Restful API created using Node and Express"],
+      "stretch": ["Add a Sign in modal when user opens app", "Incorporate Weather API to display forecast for each day of current week", "Incorporate Role Based Access control so users can only read current events and admins can create, update, and delete events"],
+      "github": "https://github.com/nurselaine/my-calendar",
+      "site": "https://my-calendar-app-nurselaine.netlify.app",
+      "active": true
+    },
+    {
+      "project_name": "Flash Flip",
+      "project_desc": "Flash Card Study & Learning Tool",
+      "project_src": "./assets/img/calendar.png",
+      "tech": ["Vanilla JavaScript", "JQuery", "HTML", "CSS"],
+      "images": ["./assets/img/calendar-1.png", "./assets/img/calendar-2.png", "./assets/img/calendar-3.png"],
+      "info": "FlashFlip, was made for anyone who wants to learn and memorize something through the use of flashcards. Users are able to create their own custom deck of flashcards. These decks are able to be saved and revisited but cannot be edited once made. When a deck is chosen the flashcards can be flipped from front to back like regular flashcards and there is also a button that allows you to flip forward and backward through the deck.",
+      "features": ["Responsive design & components created using Cascading Style Sheets", "Home page for users to navigate to different study decks", "Study cards with animated card flip to test knowledge", "Create study decks & add or delete cards from study decks", "View entire study deck and flip through each card"],
+      "stretch": ["Add a Sign in modal when user opens app", "Incorporate Weather API to display forecast for each day of current week", "Incorporate Role Based Access control so users can only read current events and admins can create, update, and delete events"],
+      "github": "https://github.com/flash-flip/flash-flip",
+      "site": "https://github.com/flash-flip/flash-flip",
+      "active": false
+    },
+    {
+      "project_name": "Meal Wheel",
+      "project_desc": "Random Recipe Generator",
+      "project_src": "./assets/img/calendar.png",
+      "tech": ["JavaScript", "React", "HTML", "CSS", "Auth0", "Express", "RESTful API", "Axios", "MongoDB"],
+      "images": ["./assets/img/calendar-1.png", "./assets/img/calendar-2.png", "./assets/img/calendar-3.png"],
+      "info": "With the press of a button, the wheel will randomly generate fresh recipe options tailored to your preferences. Explore different types of cuisines, save your favorite recipes, then share them with your friends. Unlimited spins, unlimited possibilities. Dinner starts at the Meal-Wheel™.",
+      "features": ["Responsive design & components created using React-Bootstrap component library", "User login and Authentication funcationality using auth0", "Seamless page routing created by leveraging React-Router library", "Generate a list of 10-15 random recipes of a specific cuisine by spinning a fun wheel that decides the cuisine for you!", "Save recipes to account that can be viewed or edited for future reference.", "View personal collection of saved recipes and add notes about what you liked about the recipe", "Allows users to keep a favorited list of recipes to review"],
+      "stretch": ["Add a sharing feature for users to share their favorite recipes with other users", "Create a page for users to post personal recieps", "Incorporate Role Based Access control so users can only read and like personal recipes shared"],
+      "github": "https://github.com/Team-Cmd-Z",
+      "site": "https://github.com/Team-Cmd-Z",
+      "active": false
+    }
+  ]
+}
