@@ -4,7 +4,7 @@ import Layout from './Component/Layout/Layout';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './Page/Home/Home';
-import Projects from './Page/Projects';
+import Projects from './Page/Projects/Projects';
 import Timeline from './Page/Timeline/Timeline';
 
 import { ChakraProvider } from '@chakra-ui/react'

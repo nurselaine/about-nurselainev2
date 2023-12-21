@@ -6,7 +6,8 @@ import Layout from "../../Component/Layout/Layout";
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
 import { slidein } from "../../utils/motion/motion";
 import PageDescription from "../../Component/PageDescription";
-import Projects from "../Projects";
+import Projects from "../Projects/Projects";
+import ContactForm from "../ContactForm/ContactForm";
 
 const Timeline = () => {
   return (

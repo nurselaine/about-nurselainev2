@@ -24,39 +24,89 @@ import {
   VStack
 } from "@chakra-ui/react";
 import { CheckCircleIcon, SettingsIcon } from "@chakra-ui/icons";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const ProjectCard = ({ project, idx }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(
+    mouseYSpring, 
+    [-0.5, 0.5], 
+    ["27.5deg", "-27.5deg"]
+  );
+  const rotateY = useTransform(
+    mouseXSpring, 
+    [-0.5, 0.5], 
+    ["27.5deg", "-27.5deg"]
+  );
+
+
+  const handleMouseMove = (event) => {
+    const rect = event.target.getBoundingClientRect();
+
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+
+    const xP = mouseX / width - 0.5;
+    const yP = mouseY / height - 0.5;
+
+    x.set(xP);
+    y.set(yP);
+  }
+
+  const handleMouseLeave = (event) => {
+    x.set(0);
+    y.set(0);
+  }
+
 
   const displayProjectImage = project.images.length > 0;
 
   return (
-    <Flex w="auto" wrap="wrap" gap={5} mt={["0","2rem","5rem"]} justifyContent="center">
-      <Card
-        id={`project-card-${idx}`}
-        w={["300px"]}
-        h={["150px"]}
-        color="gray.400"
+    <Flex mt={["0","1rem","2rem"]}>
+      <motion.div
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: 'preserve-3d'
+        }}
       >
-        <CardBody>
-          <Flex>
-            <Box>
-              <Image src={project.project_src} w="50px" h="50px" />
-              <Stack>
-                <Heading as="h5" size={["sm", "md", "md"]} color="gray.50">
-                  {project.project_name}
-                </Heading>
-                <Text fontSize="sm" color="gray.200">
-                  {project.project_desc}
-                </Text>
-              </Stack>
-            </Box>
-            <Button onClick={onOpen} ml="auto">
-              View
-            </Button>
-          </Flex>
-        </CardBody>
-      </Card>
+        <Card
+          id={`project-card-${idx}`}
+          w={["300px"]}
+          h={["150px"]}
+          color="gray.400"
+        >
+          <CardBody>
+            <Flex>
+              <Box>
+                <Image src={project.project_src} w="50px" h="50px" />
+                <Stack>
+                  <Heading as="h5" size={["sm", "md", "md"]} color="gray.50">
+                    {project.project_name}
+                  </Heading>
+                  <Text fontSize="sm" color="gray.200">
+                    {project.project_desc}
+                  </Text>
+                </Stack>
+              </Box>
+              <Button onClick={onOpen} ml="auto">
+                View
+              </Button>
+            </Flex>
+          </CardBody>
+        </Card>
+      </motion.div>
       <Modal isOpen={isOpen} onClose={onClose} size="xl" scrollBehavior="inside">
         <ModalOverlay />
         <ModalContent>

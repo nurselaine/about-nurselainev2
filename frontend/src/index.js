@@ -29,7 +29,6 @@ root.render(
   <React.StrictMode>
     <ChakraProvider>
       <AnimatePresence>
-
         <RouterProvider router={router} />
       </AnimatePresence>
     </ChakraProvider>

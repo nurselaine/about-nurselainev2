@@ -19,7 +19,6 @@ import Layout from "../../Component/Layout/Layout";
 const Home = () => {
   return (
     <Layout>
-      <motion.div exit={{ opacity:0 }}>
       <Box id="home" h="100vh" w="100vw" px={[8, 16, 24]}>
         <Stack spacing={5} h="80%" w="100%" flexDir="column">
           <Center
@@ -82,7 +81,6 @@ const Home = () => {
           </Link>
         </Box>
       </Box>
-      </motion.div>
     </Layout>
   );
 };

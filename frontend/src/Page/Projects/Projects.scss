@@ -1,0 +1,11 @@
+.moon{
+  @media (min-width: 0em) and (max-width: 30em) {
+    transform: scale(0.6);
+  }
+  @media (min-width: 30em) and (max-width: 80em) {
+    transform: scale(0.75);
+  }
+  @media (min-width: 80em) {
+    transform: scale(1);
+  }
+}
