@@ -1,17 +1,24 @@
 import * as React from 'react';
 import './App.css';
-import Home from './Page/Home/Home';
 import Layout from './Component/Layout/Layout';
 
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Home from './Page/Home/Home';
+import Projects from './Page/Projects';
+import Timeline from './Page/Timeline/Timeline';
 
-// 1. import `ChakraProvider` component
 import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
+  const location = useLocation();
   return (
     <ChakraProvider>
       <Layout>
-        <Home /> 
+        <Routes key={location.pathname} location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/timeline" element={<Timeline />} />
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
       </Layout>
     </ChakraProvider>
   );

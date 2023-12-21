@@ -59,9 +59,9 @@
     {
       "project_name": "Flash Flip",
       "project_desc": "Flash Card Study & Learning Tool",
-      "project_src": "./assets/img/calendar.png",
+      "project_src": "./assets/img/flashflip/card.png",
       "tech": ["Vanilla JavaScript", "JQuery", "HTML", "CSS"],
-      "images": ["./assets/img/calendar-1.png", "./assets/img/calendar-2.png", "./assets/img/calendar-3.png"],
+      "images": [],
       "info": "FlashFlip, was made for anyone who wants to learn and memorize something through the use of flashcards. Users are able to create their own custom deck of flashcards. These decks are able to be saved and revisited but cannot be edited once made. When a deck is chosen the flashcards can be flipped from front to back like regular flashcards and there is also a button that allows you to flip forward and backward through the deck.",
       "features": ["Responsive design & components created using Cascading Style Sheets", "Home page for users to navigate to different study decks", "Study cards with animated card flip to test knowledge", "Create study decks & add or delete cards from study decks", "View entire study deck and flip through each card"],
       "stretch": ["Add a Sign in modal when user opens app", "Incorporate Weather API to display forecast for each day of current week", "Incorporate Role Based Access control so users can only read current events and admins can create, update, and delete events"],
@@ -72,9 +72,9 @@
     {
       "project_name": "Meal Wheel",
       "project_desc": "Random Recipe Generator",
-      "project_src": "./assets/img/calendar.png",
+      "project_src": "./assets/img/mealwheel/recipe.png",
       "tech": ["JavaScript", "React", "HTML", "CSS", "Auth0", "Express", "RESTful API", "Axios", "MongoDB"],
-      "images": ["./assets/img/calendar-1.png", "./assets/img/calendar-2.png", "./assets/img/calendar-3.png"],
+      "images": [],
       "info": "With the press of a button, the wheel will randomly generate fresh recipe options tailored to your preferences. Explore different types of cuisines, save your favorite recipes, then share them with your friends. Unlimited spins, unlimited possibilities. Dinner starts at the Meal-Wheel™.",
       "features": ["Responsive design & components created using React-Bootstrap component library", "User login and Authentication funcationality using auth0", "Seamless page routing created by leveraging React-Router library", "Generate a list of 10-15 random recipes of a specific cuisine by spinning a fun wheel that decides the cuisine for you!", "Save recipes to account that can be viewed or edited for future reference.", "View personal collection of saved recipes and add notes about what you liked about the recipe", "Allows users to keep a favorited list of recipes to review"],
       "stretch": ["Add a sharing feature for users to share their favorite recipes with other users", "Create a page for users to post personal recieps", "Incorporate Role Based Access control so users can only read and like personal recipes shared"],

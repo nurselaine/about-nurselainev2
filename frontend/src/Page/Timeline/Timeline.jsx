@@ -46,7 +46,7 @@ const Timeline = () => {
             overview={items.overview}
           />
           <Center w="100%" pt="10rem">
-            <Box position="absolute" top="600px" left="-125px" opacity={0.5}>
+            <Box position="absolute" top="450px" left="-125px" opacity={0.5}>
               <motion.div
                 initial={{ opacity: 0.9 }}
                 animate={{ scale: 1.3 }}
@@ -130,7 +130,7 @@ const Timeline = () => {
         <Box
           w="100%"
           h="100px"
-          bgGradient="linear-gradient(360deg, #000000 24%, #050816 67%);"
+          bgGradient="linear-gradient(360deg, #000000 37%, #050816 87%);"
         />
       </motion.div>
       <motion.div>

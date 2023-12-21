@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
+  RouterProvider
 } from "react-router-dom";
 import Home from "./Page/Home/Home";
 import ErrorPage from "./Page/ErrorPage";
@@ -30,6 +29,7 @@ root.render(
   <React.StrictMode>
     <ChakraProvider>
       <AnimatePresence>
+
         <RouterProvider router={router} />
       </AnimatePresence>
     </ChakraProvider>
