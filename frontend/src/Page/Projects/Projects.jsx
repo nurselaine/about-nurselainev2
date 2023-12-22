@@ -18,8 +18,12 @@ const Projects = () => {
   console.log(features);
 
   return (
-    <Box id="projects" h="100%" w="100%" bg='black' position='relative' zIndex={-2}>
-  
+    <Box 
+      id="projects" 
+      h="100%" 
+      w="100%" 
+      position='relative' 
+    > 
       <Box
         bgGradient="linear-gradient(360deg, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 75%)"
         w="100%"
@@ -45,15 +49,15 @@ const Projects = () => {
             <ProjectCard project={project} idx={idx} />
           ))}
         </Flex>
-        <Box position="absolute" top={0} w="100%" h="110%" zIndex={-1}>
+        {/* <Box position="absolute" top={0} w="100%" h="110%" zIndex={-1}>
           <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
-        </Box>
+        </Box> */}
       </VStack>
       {/* page transition */}
-      <Center h='100vh' w='100%'>
+      {/* <Center h='100vh' w='100%'>
         <Spline className="moon" scene="https://prod.spline.design/57t1jpI5ELDi5QJx/scene.splinecode" />
       </Center>
-      <ContactForm />
+      <ContactForm /> */}
     </Box>
   );
 };

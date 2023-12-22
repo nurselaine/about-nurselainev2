@@ -8,6 +8,7 @@ import { slidein } from "../../utils/motion/motion";
 import PageDescription from "../../Component/PageDescription";
 import Projects from "../Projects/Projects";
 import ContactForm from "../ContactForm/ContactForm";
+import Tech from "../../Component/Tech/Tech";
 
 const Timeline = () => {
   return (
@@ -41,7 +42,7 @@ const Timeline = () => {
               <Blob w="200px" h="200px" r="100px" t="20px" bg="purple.200" />
             </motion.div>
           </Box>
-          <PageDescription 
+          <PageDescription
             title="Introduction"
             heading="Overview"
             overview={items.overview}
@@ -126,8 +127,12 @@ const Timeline = () => {
                 </motion.div>
               </Box>
             </Box>
+            <Box w="100%">
+              <Tech />
+            </Box>
           </Center>
         </Box>
+
         <Box
           w="100%"
           h="100px"
