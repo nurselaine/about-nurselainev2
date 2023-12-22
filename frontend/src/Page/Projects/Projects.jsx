@@ -1,16 +1,9 @@
 import { React } from "react";
 import PageDescription from "../../Component/PageDescription";
-import {
-  Box,
-  Center,
-  Flex,
-  VStack
-} from "@chakra-ui/react";
+import { Box, Center, Flex, VStack } from "@chakra-ui/react";
 import Spline from "@splinetool/react-spline";
 import projects from "../../utils/data/Projects.json";
-import ProjectCard from "../../Component/ProjectModal";
-import ContactForm from "../ContactForm/ContactForm";
-import { motion } from "framer-motion";
+import ProjectCard from "../../Component/ProjectCard/ProjectModal";
 import "./Projects.scss";
 
 const Projects = () => {
@@ -18,19 +11,9 @@ const Projects = () => {
   console.log(features);
 
   return (
-    <Box 
-      id="projects" 
-      h="100%" 
-      w="100%" 
-      position='relative' 
-    > 
-      <Box
-        bgGradient="linear-gradient(360deg, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 75%)"
-        w="100%"
-        h="150px"
-      />
-      <VStack w="100&" px={[8, 16, 24]} pt={["0", "3rem", "5rem"]}>
-        <Box bg='black' opacity={0.8}>
+    <Box id="projects" h="100%" w="100%">
+      <VStack w="100&" pt={["0", "3rem", "5rem"]}>
+        <Box>
           <PageDescription
             title="MY WORK"
             heading="Projects."

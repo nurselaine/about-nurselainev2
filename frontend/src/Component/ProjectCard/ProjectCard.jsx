@@ -11,16 +11,13 @@ import {
   Image,
   Text
 } from "@chakra-ui/react";
-import ProjectModal from "./ProjectModal";
+import ProjectModal from "../ProjectModal";
 
 const ProjectCard = ({ project, idx }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex mt={["0", "1rem", "2rem"]}>
-      <motion.div
-      
-      >
         <Card
           id={`project-card-${idx}`}
           w={["300px"]}
@@ -40,14 +37,13 @@ const ProjectCard = ({ project, idx }) => {
                   </Text>
                 </Stack>
               </Box>
-              <Button onClick={() => {console.log("Hello")}} ml="auto">
+              <Button onClick={onOpen} ml="auto">
                 View
               </Button>
               <Button>Hello</Button>
             </Flex>
           </CardBody>
         </Card>
-      </motion.div>
       <ProjectModal 
         project={project} 
         idx={idx} onOpen={onOpen} 

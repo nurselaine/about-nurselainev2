@@ -4,7 +4,6 @@ import { motion, useAnimate } from "framer-motion";
 import items from "../../utils/data/Timeline.json";
 import Layout from "../../Component/Layout/Layout";
 import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
-import { slidein } from "../../utils/motion/motion";
 import PageDescription from "../../Component/PageDescription";
 import Projects from "../Projects/Projects";
 import ContactForm from "../ContactForm/ContactForm";
@@ -135,16 +134,10 @@ const Timeline = () => {
             />
             <Tech />
           </Box>
+          <Box w='100%' mt={['2rem', '4rem']}>
+            <Projects />
+          </Box>
         </Box>
-
-        <Box
-          w="100%"
-          h="100px"
-          bgGradient="linear-gradient(360deg, #000000 37%, #050816 87%);"
-        />
-      </motion.div>
-      <motion.div>
-        <Projects />
       </motion.div>
     </Layout>
   );
