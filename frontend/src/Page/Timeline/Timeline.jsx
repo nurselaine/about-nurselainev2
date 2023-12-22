@@ -127,10 +127,14 @@ const Timeline = () => {
                 </motion.div>
               </Box>
             </Box>
-            <Box w="100%">
-              <Tech />
-            </Box>
           </Center>
+          <Box w="100%" mt={['2rem', '4rem']}>
+            <PageDescription 
+              title={'My tools'}
+              heading={'Technologies.'}
+            />
+            <Tech />
+          </Box>
         </Box>
 
         <Box

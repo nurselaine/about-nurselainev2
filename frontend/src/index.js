@@ -8,6 +8,7 @@ import Home from "./Page/Home/Home";
 import ErrorPage from "./Page/ErrorPage";
 import Timeline from "./Page/Timeline/Timeline";
 import { AnimatePresence } from "framer-motion";
+import "./utils/style/global.scss";
 
 import { ChakraProvider } from "@chakra-ui/react";
 

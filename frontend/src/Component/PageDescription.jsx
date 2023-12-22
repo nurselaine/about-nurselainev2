@@ -11,10 +11,10 @@ const PageDescription = ({ title, heading, overview }) => {
       variants={slidein('left', 'tween', 0, 1)}
     >
       <Flex flexDir="column" gap={3}>
-        <Text opacity={0.5} fontSize={["md", "lg"]} color="gray.200">
+        <Text opacity={0.5} fontSize={["md", "2xl"]} color="gray.200">
           {title}
         </Text>
-        <Heading as="b" fontSize={["2xl", "4xl"]}>
+        <Heading as="b" fontSize={["2xl", "6xl"]}>
           {heading}
         </Heading>
         <Text w={["100%", "80%"]} fontSize={["md", "lg"]} color="gray.400">

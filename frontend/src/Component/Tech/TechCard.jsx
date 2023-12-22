@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Center, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
-import "./Tech.scss";
 
 const TechCard = ({ src }) => {
   const x = useMotionValue(0);
@@ -46,6 +45,7 @@ const TechCard = ({ src }) => {
   return (
     <motion.div
       id='tech' 
+      className="tilt"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY }}

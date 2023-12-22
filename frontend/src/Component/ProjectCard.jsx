@@ -11,60 +11,15 @@ import {
   Image,
   Text
 } from "@chakra-ui/react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import ProjectModal from "./ProjectModal";
 
 const ProjectCard = ({ project, idx }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(
-    mouseYSpring,
-    [-0.5, 0.5],
-    ["27.5deg", "-27.5deg"]
-  );
-  const rotateY = useTransform(
-    mouseXSpring,
-    [-0.5, 0.5],
-    ["27.5deg", "-27.5deg"]
-  );
-
-  const handleMouseMove = (event) => {
-    console.log("Hello?");
-    const rect = event.target.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-
-    const xP = mouseX / width - 0.5;
-    const yP = mouseY / height - 0.5;
-
-    x.set(xP);
-    y.set(yP);
-  };
-
-  const handleMouseLeave = (event) => {
-    x.set(0);
-    y.set(0);
-  };
 
   return (
     <Flex mt={["0", "1rem", "2rem"]}>
       <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
-        }}
+      
       >
         <Card
           id={`project-card-${idx}`}
@@ -93,12 +48,12 @@ const ProjectCard = ({ project, idx }) => {
           </CardBody>
         </Card>
       </motion.div>
-      {/* <ProjectModal 
+      <ProjectModal 
         project={project} 
         idx={idx} onOpen={onOpen} 
         onClose={onClose} 
         isOpen={isOpen} 
-      /> */}
+      />
     </Flex>
   );
 };
