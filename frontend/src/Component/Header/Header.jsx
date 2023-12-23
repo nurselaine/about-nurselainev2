@@ -57,9 +57,22 @@ const Header = () => {
             transition={{ type: 'tween', delay: 0.3, duration: 0.5, ease: 'easeOut'}}
           >
 
-          <Link to={"/timeline"}>
+          <Link to={"/timeline#timeline"}>
             <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
               About
+            </Button>
+          </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            transition={{ type: 'tween', delay: 0.3, duration: 0.5, ease: 'easeOut'}}
+          >
+
+          <Link to={"/timeline#projects"}>
+            <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+              Projects
             </Button>
           </Link>
           </motion.div>
@@ -70,7 +83,9 @@ const Header = () => {
             transition={{ type: 'tween', delay: 0.5, duration: 0.5, ease: 'easeOut'}}
           >
 
-          <Link to={"/contact"}>
+            
+
+          <Link to={"#contactform"}>
             <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
               Contact
             </Button>

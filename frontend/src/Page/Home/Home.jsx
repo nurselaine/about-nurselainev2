@@ -1,7 +1,7 @@
-import React from "react";
+import {React, useRef, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Spline from "@splinetool/react-spline";
-import { motion } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 import {
   Box,
   Center,
@@ -10,6 +10,7 @@ import {
   HStack,
   Text,
   VStack,
+  Image,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
@@ -17,6 +18,16 @@ import "./Home.scss";
 import Layout from "../../Component/Layout/Layout";
 
 const Home = () => {
+  const ref = useRef(null);
+  const mainControls = useAnimation();
+  const isInView = useInView(mainControls, { once: true});
+
+  useEffect(() => {
+    if(isInView){
+      mainControls.start('visible');
+    }
+  }, [isInView])
+
   return (
     <Layout>
       <Box id="home" h="100vh" w="100vw" px={[8, 16, 24]}>
@@ -68,11 +79,20 @@ const Home = () => {
               </Box>
             </HStack>
           </Center>
-          <Box h={["45vh", "50vh"]} w="100vw">
-            <Spline
-              className="orbs"
-              scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode"
-            />
+          <Box h={["100px", "300px"]} w={["100%"]} ref={ref}>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, x: 0 }
+              }}
+              transition={{
+                duration: 0.75,
+                delay: 0.5
+              }}
+              animate={mainControls}
+            >
+              <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+            </motion.div>
           </Box>
         </Stack>
         <Box position="absolute" bottom="1rem" left="50%">

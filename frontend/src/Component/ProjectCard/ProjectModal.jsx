@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect, useRef } from "react";
 import {
   Box,
   Button,
@@ -23,11 +23,22 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { slidein } from "../../utils/motion/motion";
 import { CheckCircleIcon, SettingsIcon } from "@chakra-ui/icons";
 
 const ProjectCard = ({ project, idx }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if(isInView){
+      // trigger animation
+      mainControls.start('visible');
+    }
+  }, [isInView]);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const displayProjectImage = project.images.length > 0;
@@ -35,11 +46,22 @@ const ProjectCard = ({ project, idx }) => {
   const duration = idx * 0.25;
 
   return (
-    <Flex mt={["0", "1rem", "2rem"]}>
+    <Flex mt={["0", "1rem", "2rem"]} ref={ref}>
       <motion.div
-        initial={{ y: '-100%' }}
-        animate={{ y: 0 }}
-        transition={{ type: 'tween', duration: duration, ease: 'easeOut'}}
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{
+          duration: 0.5,
+          delay: 0.25
+        }}
+        // initial={{ y: '-100%' }}
+        // animate={{ y: 0 }}
+        // whileInView={{ opacity: 1 }}
+        // transition={{ type: 'tween', duration: duration, ease: 'easeOut'}}
       >
         <Card
           id={`project-card-${idx}`}

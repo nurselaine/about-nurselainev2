@@ -1,7 +1,6 @@
 import { React } from "react";
 import PageDescription from "../../Component/PageDescription";
-import { Box, Center, Flex, VStack } from "@chakra-ui/react";
-import Spline from "@splinetool/react-spline";
+import { Box, Flex, VStack } from "@chakra-ui/react";
 import projects from "../../utils/data/Projects.json";
 import ProjectCard from "../../Component/ProjectCard/ProjectModal";
 import "./Projects.scss";
@@ -32,15 +31,7 @@ const Projects = () => {
             <ProjectCard project={project} idx={idx} />
           ))}
         </Flex>
-        {/* <Box position="absolute" top={0} w="100%" h="110%" zIndex={-1}>
-          <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
-        </Box> */}
       </VStack>
-      {/* page transition */}
-      {/* <Center h='100vh' w='100%'>
-        <Spline className="moon" scene="https://prod.spline.design/57t1jpI5ELDi5QJx/scene.splinecode" />
-      </Center>
-      <ContactForm /> */}
     </Box>
   );
 };
