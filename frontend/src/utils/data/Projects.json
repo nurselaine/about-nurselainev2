@@ -81,6 +81,19 @@
       "github": "https://github.com/Team-Cmd-Z",
       "site": "https://github.com/Team-Cmd-Z",
       "active": false
+    },
+    {
+      "project_name": "BarkBook API",
+      "project_desc": "Shelter Dog Web API",
+      "project_src": "./assets/img/barkbook/dog.png",
+      "tech": ["JavaScript", "Express", "RESTful API", "Axios", "MySQL"],
+      "images": [],
+      "info": "Built using JavaScript, Node.js & Express.js - this API allows you to find listings for adoptable dogs all over the United States. I was driven to create this project for my love of animals and wanting to create a source to help these lovely furbabies find their furever home!",
+      "features": ["Seamlessly request 15 dog listings at a time", "Leveraged middleware to bypass authentication step for users each time a request is made to API", "Filter request by preferences for dog size, gender, age, and breed", "Allows users to query all available dog breeds", "Provides information on dog's personality & temperment", "Send profile photos and array of photos for each adoptable pet", "Filtered data using data sanitizing functions within Express APIs", "MySQL database to store all adoptable pet data"],
+      "stretch": ["Add a database to store viewers comments and likes for each adoptable pet", "Build a job scheduler to check intermitterntly whether adoptable pets are still available", "Simple front-end for users to view photos and names of each dog"],
+      "github": "https://github.com/nurselaine/Barkbook",
+      "site": "",
+      "active": false
     }
   ]
 }

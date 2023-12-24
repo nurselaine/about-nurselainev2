@@ -5,11 +5,13 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Home from "./Page/Home/Home";
-import ErrorPage from "./Page/ErrorPage";
+import ErrorPage from "./Page/Error/ErrorPage";
 import Timeline from "./Page/Timeline/Timeline";
 import { AnimatePresence } from "framer-motion";
+import "./utils/style/global.scss";
 
 import { ChakraProvider } from "@chakra-ui/react";
+import Projects from "./Page/Projects/Projects";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,11 @@ const router = createBrowserRouter([
   {
     path: "/timeline",
     element: <Timeline />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/timeline#projects",
+    element: <Projects />,
     errorElement: <ErrorPage />,
   },
 ]);

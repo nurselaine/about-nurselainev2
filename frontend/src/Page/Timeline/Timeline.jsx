@@ -3,11 +3,12 @@ import { Chrono } from "react-chrono";
 import { motion, useAnimate } from "framer-motion";
 import items from "../../utils/data/Timeline.json";
 import Layout from "../../Component/Layout/Layout";
-import { Box, Center, Flex, Heading, Text } from "@chakra-ui/react";
-import { slidein } from "../../utils/motion/motion";
+import { Box, Center } from "@chakra-ui/react";
 import PageDescription from "../../Component/PageDescription";
 import Projects from "../Projects/Projects";
+import CertificateSection from "../../Component/Certification/CertificateSection";
 import ContactForm from "../ContactForm/ContactForm";
+import Tech from "../../Component/Tech/Tech";
 
 const Timeline = () => {
   return (
@@ -41,12 +42,15 @@ const Timeline = () => {
               <Blob w="200px" h="200px" r="100px" t="20px" bg="purple.200" />
             </motion.div>
           </Box>
-          <PageDescription 
+          <PageDescription
             title="Introduction"
             heading="Overview"
             overview={items.overview}
           />
-          <Center w="100%" pt="10rem">
+          <Box h="auto" w="100%">
+            <CertificateSection />
+          </Box>
+          <Center w="100%" pt="5rem">
             <Box position="absolute" top="450px" left="-125px" opacity={0.5}>
               <motion.div
                 initial={{ opacity: 0.9 }}
@@ -127,15 +131,19 @@ const Timeline = () => {
               </Box>
             </Box>
           </Center>
+          <Box w="100%" mt={["2rem", "4rem"]}>
+            <PageDescription title={"My tools"} heading={"Technologies."} />
+            <Tech />
+          </Box>
+          <Box w="100%" py={["2rem", "4rem"]}>
+            <Projects />
+          </Box>
         </Box>
         <Box
           w="100%"
           h="100px"
-          bgGradient="linear-gradient(360deg, #000000 37%, #050816 87%);"
+          bgGradient="linear-gradient(360deg, #000000 20%, #050816 67%);"
         />
-      </motion.div>
-      <motion.div>
-        <Projects />
       </motion.div>
     </Layout>
   );

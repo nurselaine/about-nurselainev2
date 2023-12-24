@@ -70,7 +70,7 @@ const Header = () => {
             transition={{ type: 'tween', delay: 0.5, duration: 0.5, ease: 'easeOut'}}
           >
 
-          <Link to={"/contact"}>
+          <Link to={"/contactform"}>
             <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
               Contact
             </Button>

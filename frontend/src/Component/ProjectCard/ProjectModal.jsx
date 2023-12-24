@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect, useRef } from "react";
 import {
   Box,
   Button,
@@ -17,69 +17,51 @@ import {
   Stack,
   useDisclosure,
   HStack,
-  Card, 
-  CardBody, 
-  Image, 
-  Text, 
-  VStack
+  Card,
+  CardBody,
+  Image,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { slidein } from "../../utils/motion/motion";
 import { CheckCircleIcon, SettingsIcon } from "@chakra-ui/icons";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const ProjectCard = ({ project, idx }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if(isInView){
+      // trigger animation
+      mainControls.start('visible');
+    }
+  }, [isInView]);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(
-    mouseYSpring, 
-    [-0.5, 0.5], 
-    ["27.5deg", "-27.5deg"]
-  );
-  const rotateY = useTransform(
-    mouseXSpring, 
-    [-0.5, 0.5], 
-    ["27.5deg", "-27.5deg"]
-  );
-
-
-  const handleMouseMove = (event) => {
-    const rect = event.target.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-
-    const xP = mouseX / width - 0.5;
-    const yP = mouseY / height - 0.5;
-
-    x.set(xP);
-    y.set(yP);
-  }
-
-  const handleMouseLeave = (event) => {
-    x.set(0);
-    y.set(0);
-  }
-
 
   const displayProjectImage = project.images.length > 0;
+  const isActive = project.active;
+  const duration = idx * 0.25;
 
   return (
-    <Flex mt={["0","1rem","2rem"]}>
+    <Flex mt={["0", "1rem", "2rem"]} ref={ref}>
       <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: 'preserve-3d'
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
         }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{
+          duration: 0.5,
+          delay: 0.25
+        }}
+        // initial={{ y: '-100%' }}
+        // animate={{ y: 0 }}
+        // whileInView={{ opacity: 1 }}
+        // transition={{ type: 'tween', duration: duration, ease: 'easeOut'}}
       >
         <Card
           id={`project-card-${idx}`}
@@ -107,12 +89,21 @@ const ProjectCard = ({ project, idx }) => {
           </CardBody>
         </Card>
       </motion.div>
-      <Modal isOpen={isOpen} onClose={onClose} size="xl" scrollBehavior="inside">
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size="xl"
+        scrollBehavior="inside"
+      >
         <ModalOverlay />
         <ModalContent>
           <ModalHeader pb={0}>
-            <Heading as='h3' size='lg' color='gray.50'>{project.project_name}</Heading>
-            <Text fontSize='md' color='gray.200'>{project.project_desc}</Text>
+            <Heading as="h3" size="lg" color="gray.50">
+              {project.project_name}
+            </Heading>
+            <Text fontSize="md" color="gray.200">
+              {project.project_desc}
+            </Text>
             <HStack w="100%" wrap="wrap">
               {project.tech.map((t, idx) => (
                 <Text fontSize="xs">#{t}</Text>
@@ -133,11 +124,13 @@ const ProjectCard = ({ project, idx }) => {
                 ))}
             </Flex>
             <HStack justifyContent="center" spacing={6} p={6}>
-              <Button>
-                <Link href={project.site} isExternal>
-                  Visit Site
-                </Link>
-              </Button>
+              {isActive && (
+                <Button>
+                  <Link href={project.site} isExternal>
+                    Visit Site
+                  </Link>
+                </Button>
+              )}
               <Button>
                 <Link href={project.github} isExternal>
                   Github
@@ -145,21 +138,11 @@ const ProjectCard = ({ project, idx }) => {
               </Button>
             </HStack>
             <VStack>
-              <Text 
-                fontSize='lg' 
-                as='b'
-                mr='auto' 
-                color='gray.400'
-              >
+              <Text fontSize="lg" as="b" mr="auto" color="gray.400">
                 About.
               </Text>
               <Text>{project.info}</Text>
-              <Text 
-                fontSize='lg' 
-                as='b'
-                mr='auto' 
-                color='gray.400'
-              >
+              <Text fontSize="lg" as="b" mr="auto" color="gray.400">
                 Features.
               </Text>
               <List>
@@ -174,12 +157,7 @@ const ProjectCard = ({ project, idx }) => {
                   </ListItem>
                 ))}
               </List>
-              <Text 
-                fontSize='lg' 
-                as='b'
-                mr='auto' 
-                color='gray.400'
-              >
+              <Text fontSize="lg" as="b" mr="auto" color="gray.400">
                 Streth Goals.
               </Text>
               <List>
@@ -191,7 +169,6 @@ const ProjectCard = ({ project, idx }) => {
                 ))}
               </List>
             </VStack>
-            <Text></Text>
           </ModalBody>
         </ModalContent>
       </Modal>
