@@ -1,13 +1,12 @@
 import React from "react";
 import { Chrono } from "react-chrono";
-import { motion, useAnimate } from "framer-motion";
+import { motion } from "framer-motion";
 import items from "../../utils/data/Timeline.json";
 import Layout from "../../Component/Layout/Layout";
 import { Box, Center } from "@chakra-ui/react";
 import PageDescription from "../../Component/PageDescription";
 import Projects from "../Projects/Projects";
 import CertificateSection from "../../Component/Certification/CertificateSection";
-import ContactForm from "../ContactForm/ContactForm";
 import Tech from "../../Component/Tech/Tech";
 
 const Timeline = () => {
@@ -17,7 +16,7 @@ const Timeline = () => {
         <Box
           w="100%"
           h="100px"
-          bgGradient="linear-gradient(360deg, #050816 20%, #000000 67%);"
+          bgGradient="linear-gradient(360deg, #050816 20%, #000000 67%)"
         />
         <Box
           id="timeline"
