@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center, Image } from "@chakra-ui/react";
+import { Center, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
 
@@ -22,7 +22,6 @@ const TechCard = ({ src }) => {
   );
 
   const handleMouseMove = (event) => {
-    console.log("Hello?");
     const rect = event.target.getBoundingClientRect();
 
     const width = rect.width;
@@ -51,7 +50,6 @@ const TechCard = ({ src }) => {
       style={{ rotateX, rotateY }}
     >
       <Center
-        className='border-wrap'
         bgGradient={'linear-gradient(-90.13deg,#00cea8 1.9%,#bf61ff 97.5%)'}
         borderRadius={'50%'}
         h={['83px', '123px']}
