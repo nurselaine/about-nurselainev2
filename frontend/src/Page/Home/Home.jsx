@@ -1,6 +1,5 @@
-import {React, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
-import Spline from "@splinetool/react-spline";
 import { motion, useInView, useAnimation } from "framer-motion";
 import {
   Box,
@@ -9,13 +8,14 @@ import {
   Stack,
   HStack,
   Text,
-  VStack,
-  Image,
+  VStack
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import "./Home.scss";
 import Layout from "../../Component/Layout/Layout";
+
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 const Home = () => {
   const ref = useRef(null);
@@ -37,6 +37,7 @@ const Home = () => {
             h="auto"
             pt="3rem"
             justifyContent="flex-start"
+            position='relative'
           >
             <HStack pl="3rem">
               <Box>
@@ -79,7 +80,12 @@ const Home = () => {
               </Box>
             </HStack>
           </Center>
-          <Box h={["100px", "300px"]} w={["100%"]} ref={ref}>
+          <Box 
+            position='absolute' 
+            h={["auto"]} 
+            w={["100%"]} 
+            ref={ref}
+          >
             <motion.div
               variants={{
                 hidden: { opacity: 0, x: 100 },
@@ -91,7 +97,7 @@ const Home = () => {
               }}
               animate={mainControls}
             >
-              <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+              <Spline scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
             </motion.div>
           </Box>
         </Stack>

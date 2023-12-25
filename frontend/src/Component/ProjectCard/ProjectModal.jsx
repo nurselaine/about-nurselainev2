@@ -58,10 +58,6 @@ const ProjectCard = ({ project, idx }) => {
           duration: 0.5,
           delay: 0.25
         }}
-        // initial={{ y: '-100%' }}
-        // animate={{ y: 0 }}
-        // whileInView={{ opacity: 1 }}
-        // transition={{ type: 'tween', duration: duration, ease: 'easeOut'}}
       >
         <Card
           id={`project-card-${idx}`}
@@ -158,7 +154,7 @@ const ProjectCard = ({ project, idx }) => {
                 ))}
               </List>
               <Text fontSize="lg" as="b" mr="auto" color="gray.400">
-                Streth Goals.
+                Stretch Goals.
               </Text>
               <List>
                 {project.stretch.map((ft, idx) => (

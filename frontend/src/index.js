@@ -4,14 +4,14 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Home from "./Page/Home/Home";
-import ErrorPage from "./Page/Error/ErrorPage";
-import Timeline from "./Page/Timeline/Timeline";
+import { ChakraProvider } from "@chakra-ui/react";
 import { AnimatePresence } from "framer-motion";
 import "./utils/style/global.scss";
 
-import { ChakraProvider } from "@chakra-ui/react";
-import ContactForm from "./Page/ContactForm/ContactForm";
+const Home = React.lazy(() => import('./Page/Home/Home'));
+const Timeline = React.lazy(() => import('./Page/Timeline/Timeline'));
+const ErrorPage = React.lazy(() => import('./Page/Error/ErrorPage'));
+const ContactForm = React.lazy(() => import('./Page/ContactForm/ContactForm'));
 
 const router = createBrowserRouter([
   {
@@ -36,7 +36,9 @@ root.render(
   <React.StrictMode>
     <ChakraProvider>
       <AnimatePresence>
-        <RouterProvider router={router} />
+        <React.Suspense fallback={<p>loading...</p>}>
+          <RouterProvider router={router} />
+        </React.Suspense>
       </AnimatePresence>
     </ChakraProvider>
   </React.StrictMode>
