@@ -81,11 +81,9 @@ const Home = () => {
             </HStack>
           </Center>
           <Box 
-            position='absolute' 
-            top='300px'
-            left='0px'
-            h={["auto"]} 
-            w={["100%"]} 
+            position='relative' 
+            h={"400px"} 
+            w={["100vw"]} 
             ref={ref}
           >
             <motion.div
@@ -99,7 +97,17 @@ const Home = () => {
               }}
               animate={mainControls}
             >
+              <Box
+                position='absolute'
+                top={0}
+                left={['-50px', '-100px']}
+                h='400px'
+                w='100vw'
+                m='auto'
+              >
                <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+              </Box>
+
             </motion.div>
           </Box>
         </Stack>
