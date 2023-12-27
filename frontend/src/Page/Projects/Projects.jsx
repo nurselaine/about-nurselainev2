@@ -6,8 +6,6 @@ import ProjectCard from "../../Component/ProjectCard/ProjectModal";
 import "./Projects.scss";
 
 const Projects = () => {
-  const features = projects.projects.features;
-  console.log(features);
 
   return (
     <Box id="projects" h="100%" w="100%">
