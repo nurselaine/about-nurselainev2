@@ -70,7 +70,7 @@ const ContactForm = () => {
         <Box
           position="relative"
           h={["600px", "600px", "auto"]}
-          w={["100%", "100%", "60%"]}
+          w={["100%", "100%", "40%"]}
           className="moon-container"
         >
           <motion.div
@@ -89,19 +89,19 @@ const ContactForm = () => {
               top={0}
               left={0}
             >
-              {/* <Spline scene="https://prod.spline.design/57t1jpI5ELDi5QJx/scene.splinecode" /> */}
+              <Spline scene="https://prod.spline.design/57t1jpI5ELDi5QJx/scene.splinecode" />
             </Box>
           </motion.div>
         </Box>
         <Center
           h={["50%", "auto"]}
-          w={["100vw", "100vw", "40%"]}
+          w={["100vw", "100vw", "60%"]}
           justifyContent="center"
         >
           <Box
             bg="#151030"
             opacity={0.9}
-            w="90%"
+            w="80%"
             borderRadius={"15px"}
             p="25px"
           >
@@ -144,16 +144,16 @@ const ContactForm = () => {
             )}
           </Box>
         </Center>
-        <SplineComponent 
+        {/* <SplineComponent 
           h='100%'
           w='100%'
           t={0}
           l={0}
           spline={<Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />}
-        />
-        {/* <Box zIndex={-4} position="absolute" top={0} left={0} w="100%" h="100%">
+        /> */}
+        <Box zIndex={-4} position="absolute" top={0} left={0} w="100%" h="100%">
           <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
-        </Box> */}
+        </Box>
       </Flex>
     </Layout>
   );

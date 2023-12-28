@@ -8,6 +8,7 @@ import PageDescription from "../../Component/PageDescription";
 import Projects from "../Projects/Projects";
 import CertificateSection from "../../Component/Certification/CertificateSection";
 import Tech from "../../Component/Tech/Tech";
+import Social from "../../Component/Socials/Social";
 
 const Timeline = () => {
   return (
@@ -107,6 +108,7 @@ const Timeline = () => {
                 slideItemDuration={4500}
                 scrollable={{}}
               />
+              <Social />
               <Box position="absolute" bottom="200px" left="-200px">
                 <motion.div
                   initial={{ opacity: 0.5 }}

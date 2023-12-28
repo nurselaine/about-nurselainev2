@@ -12,8 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
-import "./Home.scss";
 import Layout from "../../Component/Layout/Layout";
+import "./Home.scss";
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
@@ -105,9 +105,8 @@ const Home = () => {
                 w='100vw'
                 m='auto'
               >
-               <Spline className="orbs" scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
+               <Spline scene="https://prod.spline.design/WXZwPqbVMSUnQ7Sn/scene.splinecode" />
               </Box>
-
             </motion.div>
           </Box>
         </Stack>
