@@ -13,11 +13,12 @@ Hello! My name is Elaine, I'm an ICU nurse and currently studying for my Master'
   - Slack n' Snack
   - Calendme
   - WenJobs
+  - BarkBook API
 
 ### Run Locally
-- npm i sass email-js
+- npm i 
 
 #### Libraries & Resources
 - React Browser Router for page navigation
-- Mantine/core UI components
-- React-if for conditional rendering of components
+- ChakraUI/React for UI Component library
+- Spline for 3D models and interactions
