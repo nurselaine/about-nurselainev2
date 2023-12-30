@@ -3,7 +3,6 @@ import { Flex, Button, IconButton } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { HamburgerIcon, CloseIcon, MoonIcon } from "@chakra-ui/icons";
 import { motion } from "framer-motion";
-import { slidein } from "../../utils/motion/motion";
 
 const Header = () => {
   const [display, changeDisplay] = useState("none");
@@ -93,6 +92,7 @@ const Header = () => {
       <Flex
         w="100vw"
         h="100vh"
+        bg='#120e2a'
         display={display}
         zIndex={20}
         pos="fixed"
@@ -113,19 +113,19 @@ const Header = () => {
         </Flex>
 
         <Flex flexDir="column" align="center" h="100vh" w="100vw">
-          <Link href="/">
+          <Link to={"/"}>
             <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
               Home
             </Button>
           </Link>
 
-          <Link href="/about">
+          <Link to={"/timeline"}>
             <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
               About
             </Button>
           </Link>
 
-          <Link href="/contact">
+          <Link to={"/contactform"}>
             <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
               Contact
             </Button>

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import { AnimatePresence, motion } from "framer-motion";
+
 const Layout = ({ children }) => {
   return (
     <AnimatePresence>

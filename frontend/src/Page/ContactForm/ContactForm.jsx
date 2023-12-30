@@ -14,7 +14,6 @@ import Layout from "../../Component/Layout/Layout";
 import { motion } from "framer-motion";
 import PageDescription from "../../Component/PageDescription";
 import emailjs from "@emailjs/browser";
-import "./ContactForm.scss";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
@@ -55,7 +54,7 @@ const ContactForm = () => {
     <Layout>
       <div
         position='relative'
-        h='100vh'
+        h='100%'
         w='100vw'
       >
         <Box
@@ -116,6 +115,7 @@ const ContactForm = () => {
                   <FormControl pb={["3rem"]}>
                     <FormLabel>Your Name</FormLabel>
                     <Input
+                      variant='filled'
                       onChange={(e) => setName(e.target.value)}
                       type="name"
                       placeholder="Rosemary Waters"
@@ -124,6 +124,7 @@ const ContactForm = () => {
                   <FormControl pb={["3rem"]}>
                     <FormLabel>Your Email</FormLabel>
                     <Input
+                      variant='filled'
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       placeholder="rosewater28@gmail.com"
@@ -132,6 +133,7 @@ const ContactForm = () => {
                   <FormControl pb={["2rem"]}>
                     <FormLabel>Your Message</FormLabel>
                     <Textarea
+                      variant='filled'
                       placeholder="Share your thoughts or let me know if you'd like a copy of my resume!"
                       size="lg"
                       h="150px"
@@ -147,7 +149,7 @@ const ContactForm = () => {
               )}
             </Box>
           </Center>
-          <Box zIndex={-4} position="absolute" top={0} left={0} w="100%" h="100vh">
+          <Box zIndex={-4} position="fixed" top={0} left={0} w="100%" h="100%">
             <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
           </Box>
         </Flex>

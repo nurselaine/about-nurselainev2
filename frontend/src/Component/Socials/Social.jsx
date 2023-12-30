@@ -12,6 +12,7 @@ const Social = () => {
     >
       <Text 
         fontSize='xl' 
+        as='b'
         w='100%' 
         color='gray.500' 
         opacity={0.8}
@@ -48,7 +49,7 @@ const Social = () => {
                   alt={social.label}
                   h="25px"
                   w="25px"
-                  mr="1rem"
+                  mr="0.5rem"
                   style={{
                     filter:'invert(100%)'
                   }}

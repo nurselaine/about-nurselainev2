@@ -24,7 +24,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { slidein } from "../../utils/motion/motion";
 import { CheckCircleIcon, SettingsIcon } from "@chakra-ui/icons";
 
 const ProjectCard = ({ project, idx }) => {

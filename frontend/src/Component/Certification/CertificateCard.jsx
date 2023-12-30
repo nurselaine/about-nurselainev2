@@ -52,7 +52,7 @@ const CertificateCard = ({ certificate }) => {
     >
       <Center
         bgGradient="linear-gradient(-90.13deg,#00cea8 1.9%,#bf61ff 97.5%)"
-        w={["100%", "243px"]}
+        w={["80vw", "243px"]}
         h={["283px"]}
         m="0.5rem"
         rounded="lg"

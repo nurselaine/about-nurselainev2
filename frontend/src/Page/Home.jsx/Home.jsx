@@ -46,8 +46,8 @@ const Home = () => {
               <Box>
                 <VStack alignItems="start" spacing={2}>
                   <Text
-                    fontSize={["3xl", "4xl", "5xl", "6xl"]}
-                    as="b"
+                    fontSize={["3xl", "4xl", "6xl"]}
+                    as='b'
                     numOfLines={1}
                     color="gray.200"
                   >

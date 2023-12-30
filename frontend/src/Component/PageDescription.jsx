@@ -1,7 +1,6 @@
 import { React, useEffect, useRef } from "react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { slidein } from "../utils/motion/motion";
 
 const PageDescription = ({ title, heading, overview }) => {
   const ref = useRef(null);

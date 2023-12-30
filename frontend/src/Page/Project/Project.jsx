@@ -3,9 +3,8 @@ import PageDescription from "../../Component/PageDescription";
 import { Box, Flex, VStack } from "@chakra-ui/react";
 import projects from "../../utils/data/Projects.json";
 import ProjectCard from "../../Component/ProjectCard/ProjectModal";
-import "./Projects.scss";
 
-const Projects = () => {
+const Project = () => {
 
   return (
     <Box id="projects" h="100%" w="100%">
@@ -34,4 +33,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Project;

@@ -5,7 +5,7 @@ import items from "../../utils/data/Timeline.json";
 import Layout from "../../Component/Layout/Layout";
 import { Box, Center } from "@chakra-ui/react";
 import PageDescription from "../../Component/PageDescription";
-import Projects from "../Projects/Projects";
+import Projects from "../Project/Project";
 import CertificateSection from "../../Component/Certification/CertificateSection";
 import Tech from "../../Component/Tech/Tech";
 import Social from "../../Component/Socials/Social";
