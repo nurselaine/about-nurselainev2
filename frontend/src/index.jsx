@@ -4,7 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loading from "./Page/Loading";
 import "./utils/styles/globals.scss";
 import "./index.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+
+const configChakra = {
+  initialColorMode: "dark"
+}
+
+const theme = extendTheme(configChakra);
 
 const Home = React.lazy(() => import("./Page/Home.jsx/Home"));
 const Timeline = React.lazy(() => import("./Page/Timeline/Timeline"));
@@ -15,27 +21,27 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: "/timeline",
     element: <Timeline />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: "/contactform",
     element: <ContactForm />,
-    errorElement: <ErrorPage />
-  }
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChakraProvider>
-    <React.StrictMode>
-      <React.Suspense fallback={<Loading />}>
+  <React.StrictMode>
+    <React.Suspense fallback={<Loading />}>
+      <ChakraProvider theme={theme}>
         <RouterProvider router={router} />
-      </React.Suspense>
-    </React.StrictMode>
-  </ChakraProvider>
+      </ChakraProvider>
+    </React.Suspense>
+  </React.StrictMode>
 );
