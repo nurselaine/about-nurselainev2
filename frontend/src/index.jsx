@@ -4,13 +4,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loading from "./Page/Loading";
 import "./utils/styles/globals.scss";
 import "./index.css";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, ColorModeScript } from "@chakra-ui/react";
 
-const configChakra = {
-  initialColorMode: "dark"
-}
-
-const theme = extendTheme(configChakra);
+const theme = extendTheme({
+  config: {
+    initialColorMode: 'dark', // or 'dark'
+    useSystemColorMode: false,
+  }
+});
 
 const Home = React.lazy(() => import("./Page/Home.jsx/Home"));
 const Timeline = React.lazy(() => import("./Page/Timeline/Timeline"));
@@ -40,6 +41,7 @@ root.render(
   <React.StrictMode>
     <React.Suspense fallback={<Loading />}>
       <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <RouterProvider router={router} />
       </ChakraProvider>
     </React.Suspense>
