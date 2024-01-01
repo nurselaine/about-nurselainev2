@@ -1,10 +1,10 @@
 import * as React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
 import Loading from "./Page/Loading";
 import "./utils/styles/globals.scss";
 import "./index.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const Home = React.lazy(() => import("./Page/Home.jsx/Home"));
 const Timeline = React.lazy(() => import("./Page/Timeline/Timeline"));
