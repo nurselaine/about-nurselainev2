@@ -37,7 +37,7 @@ const ContactForm = () => {
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         defaultParams,
-        process.env.EMAILJS_PUBLIC_KEY
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
       console.log("Email successfully sent", res.status, res.text);
       setSent(true);
