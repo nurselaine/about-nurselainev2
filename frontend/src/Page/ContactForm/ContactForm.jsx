@@ -149,9 +149,9 @@ const ContactForm = () => {
               )}
             </Box>
           </Center>
-          <Box zIndex={-4} position="fixed" top={0} left={0} w="100%" h="100%">
+          {/* <Box zIndex={-4} position="fixed" top={0} left={0} w="100%" h="100%">
             <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
-          </Box>
+          </Box> */}
         </Flex>
       </div>
     </Layout>
