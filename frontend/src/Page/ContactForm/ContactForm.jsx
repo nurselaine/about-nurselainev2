@@ -11,10 +11,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Layout from "../../Component/Layout/Layout";
-import { motion } from "framer-motion";
 import PageDescription from "../../Component/PageDescription";
 import emailjs from "@emailjs/browser";
 import { CheckCircleIcon } from "@chakra-ui/icons";
+import Loading from "../Loading";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
@@ -23,6 +23,8 @@ const ContactForm = () => {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [message, setMessage] = useState("");
+  let [moonLoading, setMoonLoading] = useState(true);
+  let [bgLoading, setbgLoading] = useState(true);
 
   let defaultParams = {
     name: name || "Unknown User.",
@@ -31,7 +33,6 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-
     try {
       const res = await emailjs.send(
         process.env.REACT_APP_SERVICE_ID,
@@ -47,11 +48,11 @@ const ContactForm = () => {
     } catch (err) {
       console.log("Error while sending email...", err);
     }
-    
   };
 
   return (
     <Layout>
+      { moonLoading && bgLoading && ( <Loading />) }
       <div
         position='relative'
         h='100%'
@@ -62,38 +63,24 @@ const ContactForm = () => {
           h='100px'
           w='100%'
         />
-        <Flex
+        <Box
           id="contactform"
-          flexDir={["column", "row-reverse"]}
-          wrap="wrap"
           height="auto"
           w="100%"
+          pb='2rem'
         >
           <Box
-            position="relative"
-            h={["600px", "600px", "auto"]}
-            w={["100%", "100%", "40%"]}
-            className="moon-container"
+            zIndex={-3}
+            h="100%"
+            w="100%"
+            position="absolute"
+            top={0}
+            left={[0, "20%", "30%"]}
           >
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.25,
-              }}
-            >
-              <Box
-                zIndex={-3}
-                h="100%"
-                w="100%"
-                position="absolute"
-                top={0}
-                left={0}
-              >
-                <Spline scene="https://prod.spline.design/57t1jpI5ELDi5QJx/scene.splinecode" />
-              </Box>
-            </motion.div>
+            <Spline
+              onLoad={() => setMoonLoading(false)}
+              scene="https://prod.spline.design/Sv8uKyaoqwcNgwEN/scene.splinecode"
+            />
           </Box>
           <Center
             h={["50%", "auto"]}
@@ -112,19 +99,19 @@ const ContactForm = () => {
                   <FormControl pb={["3rem"]}>
                     <PageDescription title="GET IN TOUCH" heading="Contact." />
                   </FormControl>
-                  <FormControl pb={["3rem"]}>
+                  <FormControl pb={["2rem"]}>
                     <FormLabel>Your Name</FormLabel>
                     <Input
-                      variant='filled'
+                      variant="filled"
                       onChange={(e) => setName(e.target.value)}
                       type="name"
                       placeholder="Rosemary Waters"
                     />
                   </FormControl>
-                  <FormControl pb={["3rem"]}>
+                  <FormControl pb={["2rem"]}>
                     <FormLabel>Your Email</FormLabel>
                     <Input
-                      variant='filled'
+                      variant="filled"
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
                       placeholder="rosewater28@gmail.com"
@@ -133,7 +120,7 @@ const ContactForm = () => {
                   <FormControl pb={["2rem"]}>
                     <FormLabel>Your Message</FormLabel>
                     <Textarea
-                      variant='filled'
+                      variant="filled"
                       placeholder="Share your thoughts or let me know if you'd like a copy of my resume!"
                       size="lg"
                       h="150px"
@@ -149,10 +136,13 @@ const ContactForm = () => {
               )}
             </Box>
           </Center>
-          <Box zIndex={-4} position="fixed" top={0} left={0} w="100%" h="100%">
-            <Spline scene="https://prod.spline.design/iYBkgf2TMdfTWIoz/scene.splinecode" />
+          <Box zIndex={-4} position="fixed" bgColor='#000000' top={0} left={0} w="100%" h="100%">
+            <Spline
+              onLoad={() => setbgLoading(false)}
+              scene="https://prod.spline.design/5wfwt1y49cJS5799/scene.splinecode"
+            />
           </Box>
-        </Flex>
+        </Box>
       </div>
     </Layout>
   );
@@ -160,7 +150,7 @@ const ContactForm = () => {
 
 const FormValidation = () => {
   return (
-    <Center h={["400px", "400px", "600px"]} >
+    <Center h={["400px", "400px", "600px"]}>
       <Flex flexDir="column" m="auto">
         <Text textAlign="center">Your message has sent!</Text>
         <CheckCircleIcon color="green.400" mx="auto" mt="1rem" />

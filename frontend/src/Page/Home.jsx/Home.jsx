@@ -39,7 +39,7 @@ const Home = () => {
             justifyContent="flex-start"
             position='relative'
           >
-            <HStack pl="3rem">
+            <HStack pl={[0,"3rem"]}>
               <Box>
                 <LineWithDot />
               </Box>
@@ -58,11 +58,11 @@ const Home = () => {
                     I am a
                     <TypeAnimation
                       sequence={[
-                        " Developer",
+                        " Web Developer",
                         1000,
                         " Nurse",
                         1000,
-                        " Graduate Student",
+                        " Master's of Computer Science Student",
                         1000,
                         " Dog mom",
                         1000,
