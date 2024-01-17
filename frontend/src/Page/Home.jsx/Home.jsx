@@ -62,7 +62,7 @@ const Home = () => {
                         1000,
                         " Nurse",
                         1000,
-                        " Master's of Computer Science Student",
+                        " Graduate Student",
                         1000,
                         " Dog mom",
                         1000,
