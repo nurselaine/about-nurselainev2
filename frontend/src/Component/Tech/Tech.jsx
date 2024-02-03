@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Flex } from "@chakra-ui/react";
 import icons from '../../utils/data/Timeline.json';
 import TechCard from './TechCard';
@@ -20,4 +20,4 @@ const Tech = () => {
   )
 }
 
-export default Tech;
+export default memo(Tech);

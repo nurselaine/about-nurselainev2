@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Flex } from "@chakra-ui/react";
 import certificate from "../../utils/data/Timeline.json";
 import CertificateCard from "./CertificateCard";
@@ -21,4 +21,4 @@ const CertificateSection = () => {
   )
 }
 
-export default CertificateSection;
+export default memo(CertificateSection);

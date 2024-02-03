@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Header from "../Header/Header";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -17,4 +17,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default memo(Layout);

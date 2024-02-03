@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import React, { useState, memo } from "react";
 import { Flex, Button, IconButton } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { HamburgerIcon, CloseIcon, MoonIcon } from "@chakra-ui/icons";
@@ -136,4 +136,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

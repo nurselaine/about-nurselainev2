@@ -1,4 +1,4 @@
-import {React, useEffect, useRef } from "react";
+import {React, useEffect, useRef, memo } from "react";
 import {
   Box,
   Button,
@@ -171,4 +171,4 @@ const ProjectCard = ({ project, idx }) => {
   );
 };
 
-export default ProjectCard;
+export default memo(ProjectCard);

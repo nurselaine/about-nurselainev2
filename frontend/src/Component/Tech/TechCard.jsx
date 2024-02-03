@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Center, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -74,4 +74,4 @@ const TechCard = ({ src }) => {
   )
 }
 
-export default TechCard;
+export default memo(TechCard);

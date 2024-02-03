@@ -1,4 +1,4 @@
-import { React, useEffect, useRef } from "react";
+import { React, useEffect, useRef, memo } from "react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
@@ -44,4 +44,4 @@ const PageDescription = ({ title, heading, overview }) => {
   );
 };
 
-export default PageDescription;
+export default memo(PageDescription);

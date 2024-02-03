@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { useRouteError } from "react-router-dom";
 
-export default function ErrorPage(){
+function ErrorPage(){
   const error = useRouteError();
   console.error(error);
   return (
@@ -14,3 +14,5 @@ export default function ErrorPage(){
     </div>
   )
 }
+
+export default memo(ErrorPage);

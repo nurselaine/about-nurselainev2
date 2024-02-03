@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Center, Image, Heading } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -81,4 +81,4 @@ const CertificateCard = ({ certificate }) => {
   );
 };
 
-export default CertificateCard;
+export default memo(CertificateCard);
