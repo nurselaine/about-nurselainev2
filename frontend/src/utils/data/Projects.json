@@ -94,6 +94,24 @@
       "github": "https://github.com/nurselaine/Barkbook",
       "site": "",
       "active": false
+    },
+    {
+      "project_name": "Typeracer",
+      "project_desc": "The Ultimate Type Racing Game",
+      "project_src": "./assets/img/typeracer/text.png",
+      "tech": ["Java", "Socket", "Thread", "RPC", "TCP/IP", "Semaphore", "Mutex Lock"],
+      "images": [],
+      "info": "",
+      "features": ["Multi-threaded server to seamlessly multiple client requests and interactions", 
+      "Shared resources managed by semaphors and mutex locks to prevent concurrency issues and deadlocks", 
+      "Interactive command line client menu to control authentication and game play", 
+      "Handles games of up to 4 players with the capacity to run multiple games to play at once", 
+      "Provides game results and individual scores to players", 
+      "Stores login and socket information for clients to skip account creation step"],
+      "stretch": ["Create a simple front-end for clients to have a friendly interface to play games", "Deploy and host back-end along with database", "Keep track of all high scores for each client and game leaderboard"],
+      "github": "https://github.com/nurselaine/typeracer?tab=readme-ov-file",
+      "site": "",
+      "active": false
     }
   ]
 }
